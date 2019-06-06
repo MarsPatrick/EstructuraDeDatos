@@ -18,20 +18,25 @@ public class Lista {
 	
 	public void agregar(Cliente cliente) {
 		Nodo nodo=new Nodo(cliente);
-		nodo.setEnlace(cabeceraCliente);
+		Nodo aux=cabeceraCliente;
 		this.cabeceraCliente=nodo;
+		nodo.setEnlace(aux);
 	}
 	
 	public void agregar(Libro libro) {
 		Nodo nodo=new Nodo(libro);
-		nodo.setEnlace(cabeceraLibros);
+		Nodo aux=cabeceraLibros;
 		this.cabeceraLibros=nodo;
+		nodo.setEnlace(aux);
+		
 	}
 	
 	public void agregar(Prestamo prestamo) {
 		Nodo nodo=new Nodo(prestamo);
-		nodo.setEnlace(cabeceraPrestamos);
+		Nodo aux=cabeceraPrestamos;
 		this.cabeceraPrestamos=nodo;
+		nodo.setEnlace(aux);
+		
 	}
 	
 	public Nodo getcabeceraCliente() {
