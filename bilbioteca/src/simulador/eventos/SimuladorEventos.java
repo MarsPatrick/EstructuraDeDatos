@@ -11,6 +11,11 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Random;
 
+import lista.Lista;
+import lista.Nodo;
+import sistema.bilbioteca.Cliente;
+import sistema.bilbioteca.Libro;
+
 public class SimuladorEventos {
 	
 	public static final String FILE_NAME_SIMULATOR = "datos_simulacion.txt";
@@ -69,9 +74,10 @@ public class SimuladorEventos {
 	}
 
 
-	private void crearLibreria() throws IOException {
+	private Lista crearLibreria() throws IOException {
 		
 		BufferedReader br = new BufferedReader(new FileReader(SimuladorEventos.class.getResource(FILE_NAME_BOOKS).getPath()));
+		Lista listaLibros = new Lista();
 		try {
 		    String line = br.readLine();
 		    ArrayList<String> lineas = new ArrayList<String>();
@@ -85,20 +91,19 @@ public class SimuladorEventos {
 		    
 		    for (String linea : lineas) {
 				String [] data = linea.split(",");
-				System.out.print(data[0]);
-				System.out.print(data[1]);	
-				System.out.print(data[2]);	
-				System.out.print(data[3]);	
-				System.out.print(data[4]);	
-				System.out.println();
+				int precio=Integer.parseInt(data[1].trim());
+				Libro l = new Libro(data[0],precio,data[2],data[3],data[4]);
+				listaLibros.agregar(l);
 			}
 		} finally {
 		    br.close();
 		}
+		return listaLibros;
 	}
 
-	private void crearClientes() throws IOException {
+	public Lista crearClientes() throws IOException {
 		BufferedReader br = new BufferedReader(new FileReader(SimuladorEventos.class.getResource(FILE_NAME_CLIENTS).getPath()));
+		Lista listaClientes = new Lista();
 		try {
 		    String line = br.readLine();
 		    ArrayList<String> lineas = new ArrayList<String>();
@@ -111,16 +116,13 @@ public class SimuladorEventos {
 		    
 		    for (String linea : lineas) {
 				String [] data = linea.split(",");
-				System.out.print(data[0]);
-				System.out.print(data[1]);
-				System.out.print(data[2]);
-				System.out.println();
-			}
-		    
+				Cliente c = new Cliente(data[0],data[1],data[2]);
+				listaClientes.agregar(c);
+			}    
 		} finally {
 		    br.close();
 		}
-		
+		return listaClientes;
 	}
 	
 	

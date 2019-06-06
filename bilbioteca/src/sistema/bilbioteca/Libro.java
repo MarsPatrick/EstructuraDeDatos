@@ -11,12 +11,12 @@ public class Libro {
 	private String nombre;
 	private String autores;
 	
-	public Libro(String numeroDeserie, int precioPrestamo, String genero, String nombre) {
+	public Libro(String numeroDeserie, int precioPrestamo, String genero, String nombre,String autores) {
 		this.numeroDeserie=numeroDeserie;
 		this.precioPrestamo=precioPrestamo;
 		this.genero=genero;
 		this.nombre=nombre;
-		
+		this.autores=autores;
 	}
 	
 }
