@@ -70,6 +70,10 @@ public class SimuladorEventos {
 		    
 		    for (String linea : datosSimulacion) {
 				String [] sd = linea.split(", ");
+				//sd[0]=Tipo de accion; P=Prestamo D=Devolucion
+				//sd[1]=Rut de cliente
+				//sd[2]=Serie de libro
+				//sd[3]=Fecha
 				Cliente c=listaClientes.buscarPorRut(sd[1]).getCliente();
 				int precio=listaLibros.buscarPorSerie(sd[2]).getLibro().getPrecioPrestamo();
 				Prestamo p = new Prestamo(c,precio,sd[3]);
@@ -101,6 +105,11 @@ public class SimuladorEventos {
 		    
 		    for (String linea : lineas) {
 				String [] data = linea.split(",");
+				//data[0]=Numero de serie
+				//data[1]=Precio de prestamo
+				//data[2]=Genero
+				//data[3]=Nombre
+				//data[4]=Autores
 				int precio=Integer.parseInt(data[1].trim());
 				Libro l = new Libro(data[0],precio,data[2],data[3],data[4]);
 				listaLibros.agregar(l);
@@ -126,6 +135,9 @@ public class SimuladorEventos {
 		    
 		    for (String linea : lineas) {
 				String [] data = linea.split(",");
+				//data[0]=Rut cliente
+				//data[1]=Nombre Cliente
+				//data[2]=Fecha de nacimiento
 				Cliente c = new Cliente(data[0],data[1],data[2]);
 				listaClientes.agregar(c);
 			}    
