@@ -1,5 +1,6 @@
 package main;
 
+import lista.Lista;
 import simulador.eventos.SimuladorEventos;
 
 public class Main {

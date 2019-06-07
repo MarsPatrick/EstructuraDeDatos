@@ -7,10 +7,13 @@ public class Prestamo {
 	private Libro libro;
 	private String fechaInicio;
 	private String fechaTermino;
-	private PrecioPrestamo precioPrestamo;
+	private int precio;
 	private Devolucion devolucion;
 	
-	public Prestamo() {
+	public Prestamo(Cliente cliente,int precio,String fechaInicio) {
+		this.cliente=cliente;
+		this.precio=precio;
+		this.fechaInicio=fechaInicio;
 		this.devolucion = null;
 	}
 	

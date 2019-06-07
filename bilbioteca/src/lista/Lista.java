@@ -51,4 +51,20 @@ public class Lista {
 		return this.cabeceraPrestamos;
 	}
 	
+	public Nodo buscarPorRut(String rut) {
+		for(Nodo i=cabeceraCliente;i!=null;i=i.getEnlace()) {
+			if(i.getCliente().getRut().equalsIgnoreCase(rut))
+				return i;
+		}
+		return null;
+	}
+	
+	public Nodo buscarPorSerie(String serie) {
+		for(Nodo i=cabeceraLibros;i!=null;i=i.getEnlace()) {
+			if(i.getLibro().getNumeroDeserie().equalsIgnoreCase(serie))
+				return i;
+		}
+		return null;
+	}
+	
 }

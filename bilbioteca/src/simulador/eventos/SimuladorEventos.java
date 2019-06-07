@@ -15,6 +15,7 @@ import lista.Lista;
 import lista.Nodo;
 import sistema.bilbioteca.Cliente;
 import sistema.bilbioteca.Libro;
+import sistema.bilbioteca.Prestamo;
 
 public class SimuladorEventos {
 	
@@ -22,14 +23,17 @@ public class SimuladorEventos {
 	public static final String FILE_NAME_CLIENTS = "datos_clientes.txt";
 	public static final String FILE_NAME_BOOKS = "datos_libros.txt";
 	private ArrayList<String> datosSimulacion;
+	public Lista listaClientes;
+	public Lista listaLibros;
+	public Lista listaPrestamos;
 	
 	public SimuladorEventos() {
 		
 		this.datosSimulacion = new ArrayList<String>();
 		
 		try {
-			this.crearClientes();
-			this.crearLibreria();
+			listaClientes=this.crearClientes();
+			listaLibros=this.crearLibreria();
 			
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -41,7 +45,7 @@ public class SimuladorEventos {
 	
 	private void comenzarSimulacion() {
 		try {
-			crearDatosSimulador();
+			listaPrestamos=crearDatosSimulador();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -51,8 +55,9 @@ public class SimuladorEventos {
 
 
 
-	private void crearDatosSimulador() throws IOException {
+	private Lista crearDatosSimulador() throws IOException {
 		BufferedReader br = new BufferedReader(new FileReader(SimuladorEventos.class.getResource(FILE_NAME_SIMULATOR).getPath()));
+		Lista listaPrestamos=new Lista();
 		try {
 		    String line = br.readLine();
 
@@ -65,12 +70,17 @@ public class SimuladorEventos {
 		    
 		    for (String linea : datosSimulacion) {
 				String [] sd = linea.split(", ");
+				Cliente c=listaClientes.buscarPorRut(sd[1]).getCliente();
+				int precio=listaLibros.buscarPorSerie(sd[2]).getLibro().getPrecioPrestamo();
+				Prestamo p = new Prestamo(c,precio,sd[3]);
+				listaPrestamos.agregar(p);
 				System.out.println(sd[0]+", "+ sd[1]+", "+sd[2]+", "+sd[3]);
 			}
 		    
 		} finally {
 		    br.close();
 		}
+		return listaPrestamos;
 	}
 
 

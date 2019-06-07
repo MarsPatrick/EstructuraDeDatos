@@ -12,11 +12,51 @@ public class Libro {
 	private String autores;
 	
 	public Libro(String numeroDeserie, int precioPrestamo, String genero, String nombre,String autores) {
-		this.numeroDeserie=numeroDeserie;
-		this.precioPrestamo=precioPrestamo;
-		this.genero=genero;
-		this.nombre=nombre;
-		this.autores=autores;
+		this.setNumeroDeserie(numeroDeserie);
+		this.setPrecioPrestamo(precioPrestamo);
+		this.setGenero(genero);
+		this.setNombre(nombre);
+		this.setAutores(autores);
+	}
+
+	public String getNumeroDeserie() {
+		return numeroDeserie;
+	}
+
+	public void setNumeroDeserie(String numeroDeserie) {
+		this.numeroDeserie = numeroDeserie;
+	}
+
+	public int getPrecioPrestamo() {
+		return precioPrestamo;
+	}
+
+	public void setPrecioPrestamo(int precioPrestamo) {
+		this.precioPrestamo = precioPrestamo;
+	}
+
+	public String getGenero() {
+		return genero;
+	}
+
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getAutores() {
+		return autores;
+	}
+
+	public void setAutores(String autores) {
+		this.autores = autores;
 	}
 	
 }
