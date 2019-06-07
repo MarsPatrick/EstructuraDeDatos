@@ -14,6 +14,7 @@ import java.util.Random;
 import lista.Lista;
 import lista.Nodo;
 import sistema.bilbioteca.Cliente;
+import sistema.bilbioteca.Libreria;
 import sistema.bilbioteca.Libro;
 import sistema.bilbioteca.Prestamo;
 
@@ -37,8 +38,7 @@ public class SimuladorEventos {
 			
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
-		
+		}	
 		this.comenzarSimulacion();
 	}
 	
@@ -48,9 +48,7 @@ public class SimuladorEventos {
 			listaPrestamos=crearDatosSimulador();
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
-		
-		
+		}	
 	}
 
 
@@ -58,14 +56,14 @@ public class SimuladorEventos {
 	private Lista crearDatosSimulador() throws IOException {
 		BufferedReader br = new BufferedReader(new FileReader(SimuladorEventos.class.getResource(FILE_NAME_SIMULATOR).getPath()));
 		Lista listaPrestamos=new Lista();
+		Lista listaPrestamosFinal=new Lista();
 		try {
 		    String line = br.readLine();
 
 		    while (line != null) {
 		    	if(line != null)
 		        	datosSimulacion.add(line);
-		        line = br.readLine();
-		        
+		        line = br.readLine();  
 		    }
 		    
 		    for (String linea : datosSimulacion) {
@@ -78,13 +76,16 @@ public class SimuladorEventos {
 				int precio=listaLibros.buscarPorSerie(sd[2]).getLibro().getPrecioPrestamo();
 				Prestamo p = new Prestamo(c,precio,sd[3]);
 				listaPrestamos.agregar(p);
-				System.out.println(sd[0]+", "+ sd[1]+", "+sd[2]+", "+sd[3]);
 			}
 		    
 		} finally {
 		    br.close();
 		}
-		return listaPrestamos;
+		
+		for(Nodo p=listaPrestamos.getcabeceraPrestamos();p!=null;p=p.getEnlace())
+			listaPrestamosFinal.agregar(p.getPrestamo());
+		
+		return listaPrestamosFinal;
 	}
 
 
@@ -92,6 +93,7 @@ public class SimuladorEventos {
 		
 		BufferedReader br = new BufferedReader(new FileReader(SimuladorEventos.class.getResource(FILE_NAME_BOOKS).getPath()));
 		Lista listaLibros = new Lista();
+		Lista listaLibrosFinal = new Lista();
 		try {
 		    String line = br.readLine();
 		    ArrayList<String> lineas = new ArrayList<String>();
@@ -99,8 +101,7 @@ public class SimuladorEventos {
 		    while (line != null) {
 		    	if(line != null)
 		        	lineas.add(line);
-		        line = br.readLine();
-		        
+		        line = br.readLine();		        
 		    }
 		    
 		    for (String linea : lineas) {
@@ -117,12 +118,16 @@ public class SimuladorEventos {
 		} finally {
 		    br.close();
 		}
-		return listaLibros;
+		for(Nodo l=listaLibros.getcabeceraLibros();l!=null;l=l.getEnlace())
+			listaLibrosFinal.agregar(l.getLibro());
+		
+		return listaLibrosFinal;
 	}
 
 	public Lista crearClientes() throws IOException {
 		BufferedReader br = new BufferedReader(new FileReader(SimuladorEventos.class.getResource(FILE_NAME_CLIENTS).getPath()));
 		Lista listaClientes = new Lista();
+		Lista listaClientesFinal = new Lista();
 		try {
 		    String line = br.readLine();
 		    ArrayList<String> lineas = new ArrayList<String>();
@@ -144,7 +149,9 @@ public class SimuladorEventos {
 		} finally {
 		    br.close();
 		}
-		return listaClientes;
+		for(Nodo c=listaClientes.getcabeceraCliente();c!=null;c=c.getEnlace())
+			listaClientesFinal.agregar(c.getCliente());
+		return listaClientesFinal;
 	}
 	
 	

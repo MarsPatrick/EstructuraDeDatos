@@ -26,5 +26,8 @@ public class Prestamo {
 		this.devolucion = new Devolucion(fecha);
 	}
 	
+	public Cliente getCliente() {
+		return this.cliente;
+	}
 
 }
