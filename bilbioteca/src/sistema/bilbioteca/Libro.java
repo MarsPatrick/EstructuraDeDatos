@@ -1,7 +1,5 @@
 package sistema.bilbioteca;
 
-import lista.Lista;
-
 public class Libro {
 	
 	
@@ -57,6 +55,10 @@ public class Libro {
 
 	public void setAutores(String autores) {
 		this.autores = autores;
+	}
+	
+	public String toString() {
+		return this.numeroDeserie+" "+this.precioPrestamo+" "+this.genero+" "+this.nombre+" "+this.autores;
 	}
 	
 }

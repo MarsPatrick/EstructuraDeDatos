@@ -10,9 +10,9 @@ public class Prestamo {
 	private int precio;
 	private Devolucion devolucion;
 	
-	public Prestamo(Cliente cliente,int precio,String fechaInicio) {
+	public Prestamo(Cliente cliente,Libro libro,String fechaInicio) {
 		this.cliente=cliente;
-		this.precio=precio;
+		this.libro=libro;
 		this.fechaInicio=fechaInicio;
 		this.devolucion = null;
 	}
@@ -30,4 +30,7 @@ public class Prestamo {
 		return this.cliente;
 	}
 
+	public String toString() {
+		return this.cliente.getRut()+" "+this.libro.getNumeroDeserie()+" "+this.fechaInicio;
+	}
 }

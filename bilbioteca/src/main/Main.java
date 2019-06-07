@@ -1,7 +1,5 @@
 package main;
 
-import lista.Lista;
-import simulador.eventos.SimuladorEventos;
 import sistema.bilbioteca.Libreria;
 
 public class Main {

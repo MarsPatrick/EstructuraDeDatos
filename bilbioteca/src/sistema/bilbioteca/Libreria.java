@@ -1,6 +1,7 @@
 package sistema.bilbioteca;
 
 import lista.Lista;
+import lista.Nodo;
 import simulador.eventos.SimuladorEventos;
 
 public class Libreria {
@@ -45,11 +46,21 @@ public class Libreria {
 		this.listaLibros = listaLibros;
 	}
 	
-	public void agregarCliente(Cliente cliente) {
-		this.listaClientes.agregar(cliente);
+	public void imprimirClientes() {
+		Lista lista = this.listaClientes;
+		for(Nodo cliente=lista.getcabeceraCliente();cliente!=null;cliente=cliente.getEnlace())
+			System.out.println(cliente.getCliente().toString());
 	}
 	
-	public void agregarLibro(Libro libro) {
-		this.listaLibros.agregar(libro);
+	public void imprimirLibros() {
+		Lista lista = this.listaLibros;
+		for(Nodo libro=lista.getcabeceraLibros();libro!=null;libro=libro.getEnlace())
+			System.out.println(libro.getLibro().toString());
+	}
+	
+	public void imprimirPrestamo() {
+		Lista lista = this.listaPrestamos;
+		for(Nodo prestamo=lista.getcabeceraPrestamos();prestamo!=null;prestamo=prestamo.getEnlace())
+			System.out.println(prestamo.getPrestamo().toString());
 	}
 }

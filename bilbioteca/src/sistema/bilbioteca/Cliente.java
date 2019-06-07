@@ -39,4 +39,8 @@ public class Cliente {
 	public void setFechaNacimiento(String fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
+	
+	public String toString() {
+		return this.rut+" "+this.nombre+" "+this.fechaNacimiento;
+	}
 }

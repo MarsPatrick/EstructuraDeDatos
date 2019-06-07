@@ -73,8 +73,8 @@ public class SimuladorEventos {
 				//sd[2]=Serie de libro
 				//sd[3]=Fecha
 				Cliente c=listaClientes.buscarPorRut(sd[1]).getCliente();
-				int precio=listaLibros.buscarPorSerie(sd[2]).getLibro().getPrecioPrestamo();
-				Prestamo p = new Prestamo(c,precio,sd[3]);
+				Libro l=listaLibros.buscarPorSerie(sd[2]).getLibro();
+				Prestamo p = new Prestamo(c,l,sd[3]);
 				listaPrestamos.agregar(p);
 			}
 		    
