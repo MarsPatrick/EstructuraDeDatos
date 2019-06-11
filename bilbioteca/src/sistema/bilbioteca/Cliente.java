@@ -16,6 +16,12 @@ public class Cliente {
 		this.setFechaNacimiento(fechaNacimiento);
 	}
 
+	public String toString() {
+		return this.rut+" "+this.nombre+" "+this.fechaNacimiento;
+	}
+
+	
+	
 	public String getRut() {
 		return rut;
 	}
@@ -39,8 +45,20 @@ public class Cliente {
 	public void setFechaNacimiento(String fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
-	
-	public String toString() {
-		return this.rut+" "+this.nombre+" "+this.fechaNacimiento;
+
+	public Lista getListaLibros() {
+		return listaLibros;
+	}
+
+	public void setListaLibros(Lista listaLibros) {
+		this.listaLibros = listaLibros;
+	}
+
+	public Lista getPrestamos() {
+		return prestamos;
+	}
+
+	public void setPrestamos(Lista prestamos) {
+		this.prestamos = prestamos;
 	}
 }

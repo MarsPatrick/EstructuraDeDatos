@@ -17,6 +17,12 @@ public class Libro {
 		this.setAutores(autores);
 	}
 
+	public String toString() {
+		return this.numeroDeserie+" "+this.precioPrestamo+" "+this.genero+" "+this.nombre+" "+this.autores;
+	}
+	
+	
+	
 	public String getNumeroDeserie() {
 		return numeroDeserie;
 	}
@@ -55,10 +61,6 @@ public class Libro {
 
 	public void setAutores(String autores) {
 		this.autores = autores;
-	}
-	
-	public String toString() {
-		return this.numeroDeserie+" "+this.precioPrestamo+" "+this.genero+" "+this.nombre+" "+this.autores;
 	}
 	
 }

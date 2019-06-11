@@ -23,29 +23,13 @@ public class Libreria {
 	}
 	
 	public void terminarPrestamo(Prestamo prestamo) {
-		
+
 	}
 	
 	private void bloquearCliente() {
 		
 	}
 
-	public Lista getListaClientes() {
-		return listaClientes;
-	}
-
-	public void setListaClientes(Lista listaClientes) {
-		this.listaClientes = listaClientes;
-	}
-
-	public Lista getListaLibros() {
-		return listaLibros;
-	}
-
-	public void setListaLibros(Lista listaLibros) {
-		this.listaLibros = listaLibros;
-	}
-	
 	public void imprimirClientes() {
 		Lista lista = this.listaClientes;
 		for(Nodo cliente=lista.getcabeceraCliente();cliente!=null;cliente=cliente.getEnlace())
@@ -62,5 +46,31 @@ public class Libreria {
 		Lista lista = this.listaPrestamos;
 		for(Nodo prestamo=lista.getcabeceraPrestamos();prestamo!=null;prestamo=prestamo.getEnlace())
 			System.out.println(prestamo.getPrestamo().toString());
+	}
+	
+	
+	
+	public Lista getListaClientes() {
+		return listaClientes;
+	}
+
+	public void setListaClientes(Lista listaClientes) {
+		this.listaClientes = listaClientes;
+	}
+
+	public Lista getListaLibros() {
+		return listaLibros;
+	}
+
+	public void setListaLibros(Lista listaLibros) {
+		this.listaLibros = listaLibros;
+	}
+
+	public int getGananciaEnPrestamos() {
+		return gananciaEnPrestamos;
+	}
+
+	public void setGananciaEnPrestamos(int gananciaEnPrestamos) {
+		this.gananciaEnPrestamos = gananciaEnPrestamos;
 	}
 }
