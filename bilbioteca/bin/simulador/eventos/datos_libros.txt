@@ -1,0 +1,79 @@
+001, 2000, Programacion, Estructura de datos en java, Luis Joyanes
+002, 2000, Programacion, Estructura de datos en java, Luis Joyanes
+003, 2000, Programacion, Estructura de datos en java, Luis Joyanes
+004, 2000, Programacion, Estructura de datos en java, Luis Joyanes
+005, 2000, Programacion, Estructura de datos en java, Luis Joyanes
+006, 2000, Programacion, Estructura de datos en java, Luis Joyanes
+007, 2000, Programacion, Estructura de datos en java, Luis Joyanes
+008, 2000, Programacion, Estructura de datos en java, Luis Joyanes
+009, 2000, Programacion, Estructura de datos en java, Luis Joyanes
+010, 2000, Programacion, Estructura de datos en java, Luis Joyanes
+011, 6000, Ingenieria de software, Ingenieria de software, Ian sommerville
+012, 6000, Ingenieria de software, Ingenieria de software, Ian sommerville
+013, 6000, Ingenieria de software, Ingenieria de software, Ian sommerville
+014, 6000, Ingenieria de software, Ingenieria de software, Ian sommerville
+015, 6000, Ingenieria de software, Ingenieria de software, Ian sommerville
+016, 6000, Ingenieria de software, Ingenieria de software, Ian sommerville
+017, 6000, Ingenieria de software, Ingenieria de software, Ian sommerville
+018, 6000, Ingenieria de software, Ingenieria de software, Ian sommerville
+019, 6000, Ingenieria de software, Ingenieria de software, Ian sommerville
+020, 6000, Ingenieria de software, Ingenieria de software,  Roger Pressma
+021, 6000, Ingenieria de software, Ingenieria de software,  Roger Pressma
+022, 6000, Ingenieria de software, Ingenieria de software,  Roger Pressma
+023, 6000, Ingenieria de software, Ingenieria de software,  Roger Pressma
+024, 6000, Ingenieria de software, Ingenieria de software,  Roger Pressma
+025, 6000, Ingenieria de software, Ingenieria de software,  Roger Pressma
+026, 6000, Ingenieria de software, Ingenieria de software,  Roger Pressma
+027, 6000, Ingenieria de software, Ingenieria de software,  Roger Pressma
+028, 6000, Ingenieria de software, Ingenieria de software,  Roger Pressma
+029, 6000, Ingenieria de software, Ingenieria de software,  Roger Pressma
+030, 6000, Ingenieria de software, Ingenieria de software,  Roger Pressma
+031, 6000, Ingenieria de software, Ingenieria de software,  Roger Pressma
+032, 6000, Ingenieria de software, Ingenieria de software,  Roger Pressma
+033, 6000, Ingenieria de software, Ingenieria de software,  Roger Pressma
+034, 6000, Ingenieria de software, Ingenieria de software,  Roger Pressma
+035, 6000, Ingenieria de software, Ingenieria de software,  Roger Pressma
+036, 6000, Ingenieria de software, Ingenieria de software,  Roger Pressma
+037, 6000, Ingenieria de software, Ingenieria de software,  Roger Pressma
+038, 6000, Ingenieria de software, Ingenieria de software,  Roger Pressma
+039, 6000, Ingenieria de software, Ingenieria de software,  Roger Pressma
+040, 4000, Sistemas operativos, Sistemas operativos, Andrew Tanenbaum
+041, 4000, Sistemas operativos, Sistemas operativos, Andrew Tanenbaum
+042, 4000, Sistemas operativos, Sistemas operativos, Andrew Tanenbaum
+043, 4000, Sistemas operativos, Sistemas operativos, Andrew Tanenbaum
+044, 4000, Sistemas operativos, Sistemas operativos, Andrew Tanenbaum
+045, 4000, Sistemas operativos, Sistemas operativos, Andrew Tanenbaum
+046, 4000, Sistemas operativos, Sistemas operativos, Andrew Tanenbaum
+047, 4000, Sistemas operativos, Sistemas operativos, Andrew Tanenbaum
+048, 4000, Sistemas operativos, Sistemas operativos, Andrew Tanenbaum
+049, 4000, Sistemas operativos, Sistemas operativos, Andrew Tanenbaum
+050, 4000, Sistemas operativos, Sistemas operativos, Andrew Tanenbaum
+051, 4000, Sistemas operativos, Sistemas operativos, Andrew Tanenbaum
+052, 4000, Sistemas operativos, Sistemas operativos, Andrew Tanenbaum
+053, 4000, Sistemas operativos, Sistemas operativos, Andrew Tanenbaum
+054, 4000, Sistemas operativos, Sistemas operativos, Andrew Tanenbaum
+055, 4000, Sistemas operativos, Sistemas operativos, Andrew Tanenbaum
+056, 4000, Sistemas operativos, Sistemas operativos, Andrew Tanenbaum
+057, 4000, Sistemas operativos, Sistemas operativos, Andrew Tanenbaum
+058, 4000, Sistemas operativos, Sistemas operativos, Andrew Tanenbaum
+059, 4000, Sistemas operativos, Sistemas operativos, Andrew Tanenbaum
+060, 3000, Ingeniería de software, El lenguaje de modelado unificado, Grady Booch - James Rumbaugh - Ivar Jacobson
+061, 3000, Ingeniería de software, El lenguaje de modelado unificado, Grady Booch - James Rumbaugh - Ivar Jacobson
+062, 3000, Ingeniería de software, El lenguaje de modelado unificado, Grady Booch - James Rumbaugh - Ivar Jacobson
+063, 3000, Ingeniería de software, El lenguaje de modelado unificado, Grady Booch - James Rumbaugh - Ivar Jacobson
+064, 3000, Ingeniería de software, El lenguaje de modelado unificado, Grady Booch - James Rumbaugh - Ivar Jacobson
+065, 3000, Ingeniería de software, El lenguaje de modelado unificado, Grady Booch - James Rumbaugh - Ivar Jacobson
+066, 3000, Ingeniería de software, El lenguaje de modelado unificado, Grady Booch - James Rumbaugh - Ivar Jacobson
+067, 3000, Ingeniería de software, El lenguaje de modelado unificado, Grady Booch - James Rumbaugh - Ivar Jacobson
+068, 3000, Ingeniería de software, El lenguaje de modelado unificado, Grady Booch - James Rumbaugh - Ivar Jacobson
+069, 3000, Ingeniería de software, El lenguaje de modelado unificado, Grady Booch - James Rumbaugh - Ivar Jacobson
+070, 3000, Ingeniería de software, El lenguaje de modelado unificado, Grady Booch - James Rumbaugh - Ivar Jacobson
+071, 3000, Ingeniería de software, El lenguaje de modelado unificado, Grady Booch - James Rumbaugh - Ivar Jacobson
+072, 3000, Ingeniería de software, El lenguaje de modelado unificado, Grady Booch - James Rumbaugh - Ivar Jacobson
+073, 3000, Ingeniería de software, El lenguaje de modelado unificado, Grady Booch - James Rumbaugh - Ivar Jacobson
+074, 3000, Ingeniería de software, El lenguaje de modelado unificado, Grady Booch - James Rumbaugh - Ivar Jacobson
+075, 3000, Ingeniería de software, El lenguaje de modelado unificado, Grady Booch - James Rumbaugh - Ivar Jacobson
+076, 3000, Ingeniería de software, El lenguaje de modelado unificado, Grady Booch - James Rumbaugh - Ivar Jacobson
+077, 3000, Ingeniería de software, El lenguaje de modelado unificado, Grady Booch - James Rumbaugh - Ivar Jacobson
+078, 3000, Ingeniería de software, El lenguaje de modelado unificado, Grady Booch - James Rumbaugh - Ivar Jacobson
+079, 3000, Ingeniería de software, El lenguaje de modelado unificado, Grady Booch - James Rumbaugh - Ivar Jacobson
