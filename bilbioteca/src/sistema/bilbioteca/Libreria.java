@@ -20,8 +20,8 @@ public class Libreria {
 	
 	public void generarPrestamo(Cliente cliente, Libro libro,String fecha) {
 			Prestamo prestamo=new Prestamo(cliente,libro,fecha);
-			this.listaPrestamos.agregar(prestamo);
-			this.listaClientes.buscarPorRut(cliente.getRut()).getCliente().setAcceso(false);
+			this.agregarPrestamo(prestamo);
+			this.bloquearCliente(cliente);
 	}
 	
 	public void terminarPrestamo(Prestamo prestamo) {
@@ -29,9 +29,11 @@ public class Libreria {
 		//seguir haciendo las accione
 	}
 	
-	@SuppressWarnings("unused")
 	private void bloquearCliente(Cliente cliente) {
+		Lista aux=this.listaClientes;
 		cliente.setAcceso(false);
+		aux.buscarPorRut(cliente.getRut()).setCliente(cliente);
+		this.listaClientes=aux;
 	}
 
 	public void imprimirClientes() {
@@ -76,5 +78,11 @@ public class Libreria {
 
 	public void setGananciaEnPrestamos(int gananciaEnPrestamos) {
 		this.gananciaEnPrestamos = gananciaEnPrestamos;
+	}
+	
+	public void agregarPrestamo(Prestamo prestamo) {
+		Lista aux = this.listaPrestamos;
+		aux.agregar(prestamo);
+		this.listaPrestamos=aux;
 	}
 }
