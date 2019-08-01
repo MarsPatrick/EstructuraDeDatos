@@ -15,19 +15,23 @@ public class Libreria {
 		SimuladorEventos s=new SimuladorEventos();
 		this.listaClientes=s.listaClientes;
 		this.listaLibros=s.listaLibros;
-		this.listaPrestamos=s.listaPrestamos;
+		this.listaPrestamos=new Lista();
 	}
 	
-	public void generarPrestamo(Cliente cliente, Libro libro) {
-		
+	public void generarPrestamo(Cliente cliente, Libro libro,String fecha) {
+			Prestamo prestamo=new Prestamo(cliente,libro,fecha);
+			this.listaPrestamos.agregar(prestamo);
+			this.listaClientes.buscarPorRut(cliente.getRut()).getCliente().setAcceso(false);
 	}
 	
 	public void terminarPrestamo(Prestamo prestamo) {
-
+		prestamo.getCliente().setAcceso(true);
+		//seguir haciendo las acciones
 	}
 	
-	private void bloquearCliente() {
-		
+	@SuppressWarnings("unused")
+	private void bloquearCliente(Cliente cliente) {
+		cliente.setAcceso(false);
 	}
 
 	public void imprimirClientes() {

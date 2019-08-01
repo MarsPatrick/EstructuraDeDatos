@@ -3,18 +3,10 @@ package simulador.eventos;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Random;
-
 import lista.Lista;
 import lista.Nodo;
 import sistema.bilbioteca.Cliente;
-import sistema.bilbioteca.Libreria;
 import sistema.bilbioteca.Libro;
 import sistema.bilbioteca.Prestamo;
 

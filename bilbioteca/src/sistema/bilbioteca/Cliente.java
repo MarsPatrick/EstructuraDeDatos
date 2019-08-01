@@ -9,11 +9,13 @@ public class Cliente {
 	private String nombre;
 	private String fechaNacimiento;
 	private Lista prestamos;
+	private boolean acceso;
 	
 	public Cliente(String rut,String nombre,String fechaNacimiento) {
 		this.setRut(rut);
 		this.setNombre(nombre);
 		this.setFechaNacimiento(fechaNacimiento);
+		this.setAcceso(true);
 	}
 
 	public String toString() {
@@ -60,5 +62,13 @@ public class Cliente {
 
 	public void setPrestamos(Lista prestamos) {
 		this.prestamos = prestamos;
+	}
+
+	public boolean isAcceso() {
+		return acceso;
+	}
+
+	public void setAcceso(boolean acceso) {
+		this.acceso = acceso;
 	}
 }

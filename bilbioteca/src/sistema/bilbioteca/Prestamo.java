@@ -78,4 +78,14 @@ public class Prestamo {
 	public void setDevolucion(Devolucion devolucion) {
 		this.devolucion = devolucion;
 	}
+	
+	
+	public String getFechaInicio() {
+		return fechaInicio;
+	}
+
+
+	public void setFechaInicio(String fechaInicio) {
+		this.fechaInicio = fechaInicio;
+	}
 }

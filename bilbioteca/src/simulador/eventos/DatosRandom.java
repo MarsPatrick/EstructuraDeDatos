@@ -1,11 +1,7 @@
 package simulador.eventos;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.Random;
 
 public class DatosRandom {
@@ -19,15 +15,9 @@ public class DatosRandom {
 		
 		DateTimeFormatter formatters = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 	    
-		
 		LocalDate randomBirthDate = LocalDate.ofEpochDay(randomDay);
 		String text = randomBirthDate.format(formatters);
 		
-		
-		
-	
 		return text;
-	}
-
-	
+	}	
 }
