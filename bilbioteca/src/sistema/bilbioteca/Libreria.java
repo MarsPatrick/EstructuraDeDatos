@@ -26,7 +26,7 @@ public class Libreria {
 	
 	public void terminarPrestamo(Prestamo prestamo) {
 		prestamo.getCliente().setAcceso(true);
-		//seguir haciendo las acciones
+		//seguir haciendo las accione
 	}
 	
 	@SuppressWarnings("unused")
