@@ -9,18 +9,19 @@ public class Prestamo {
 	private String fechaTermino;
 	private int precio;
 	private Devolucion devolucion;
+	private boolean esPrestamo;
 	
 	public Prestamo(Cliente cliente,Libro libro,String fechaInicio) {
 		this.cliente=cliente;
 		this.libro=libro;
 		this.fechaInicio=fechaInicio;
 		this.setDevolucion(null);
-		this.calcularFechaEntrega();
+		//this.calcularFechaEntrega();
 	}
 	
-	public void calcularFechaEntrega() {
+	/*public void calcularFechaEntrega() {
 		this.setFechaTermino("Hacer el calculo");
-	}
+	}*/
 	
 	public void generarDevolucion(String fecha) {
 		this.setDevolucion(new Devolucion(fecha));
@@ -87,5 +88,17 @@ public class Prestamo {
 
 	public void setFechaInicio(String fechaInicio) {
 		this.fechaInicio = fechaInicio;
+	}
+
+	public boolean isEsPrestamo() {
+		return esPrestamo;
+	}
+
+	public void setEsPrestamo(boolean esPrestamo) {
+		this.esPrestamo = esPrestamo;
+	}
+	
+	public Libro getLibro() {
+		return this.libro;
 	}
 }

@@ -65,15 +65,16 @@ public class SimuladorEventos {
 				//sd[2]=Serie de libro
 				//sd[3]=Fecha
 				
-				if(sd[0].equalsIgnoreCase("p")) {
-					//efectuar el prestamo
-				}
-				if(sd[0].equalsIgnoreCase("d")) {
-					//efectuar la devolucion
-				}
+
 				Cliente c=listaClientes.buscarPorRut(sd[1]).getCliente();
 				Libro l=listaLibros.buscarPorSerie(sd[2]).getLibro();
 				Prestamo p = new Prestamo(c,l,sd[3]);
+				if(sd[0].equalsIgnoreCase("p")) {
+					p.setEsPrestamo(true);
+				}
+				if(sd[0].equalsIgnoreCase("d")) {
+					p.setEsPrestamo(false);
+				}
 				listaEventos.agregarEventos(p);
 			}
 		    

@@ -8,6 +8,7 @@ public class Libro {
 	private String genero;
 	private String nombre;
 	private String autores;
+	private boolean estaPrestado=false;
 	
 	public Libro(String numeroDeserie, int precioPrestamo, String genero, String nombre,String autores) {
 		this.setNumeroDeserie(numeroDeserie);
@@ -18,7 +19,7 @@ public class Libro {
 	}
 
 	public String toString() {
-		return this.numeroDeserie+" "+this.precioPrestamo+" "+this.genero+" "+this.nombre+" "+this.autores;
+		return this.numeroDeserie+" "+this.precioPrestamo+" "+this.genero+" "+this.nombre+" "+this.autores+" "+this.estaPrestado;
 	}
 	
 	
@@ -61,6 +62,14 @@ public class Libro {
 
 	public void setAutores(String autores) {
 		this.autores = autores;
+	}
+
+	public boolean isEstaPrestado() {
+		return estaPrestado;
+	}
+
+	public void setEstaPrestado(boolean estaPrestado) {
+		this.estaPrestado = estaPrestado;
 	}
 	
 }

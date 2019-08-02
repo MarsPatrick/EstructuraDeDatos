@@ -9,6 +9,7 @@ import sistema.bilbioteca.Prestamo;
 public class main {
 
 	public static void main(String[] args) {
+		
 		SimuladorEventos s= new SimuladorEventos();
 		Libreria l = new Libreria();
 		l.setListaClientes(s.listaClientes);
@@ -16,12 +17,18 @@ public class main {
 		Lista eventos = s.listaEventos;
 		
 		Nodo puntero = eventos.getcabeceraEventos();
-		
 		while(puntero!=null) {
 			Prestamo prestamo = puntero.getPrestamo();
-			l.agregarPrestamo(prestamo);
+			if(prestamo.isEsPrestamo()) {
+				l.generarPrestamo(prestamo);
+			}else {
+				l.terminarPrestamo(prestamo);
+			}
 			puntero = puntero.getEnlace();
 		}
-		l.imprimirPrestamo();
+		
+		//l.imprimirClientes();
+		//l.imprimirLibros();
+		//l.imprimirPrestamo();
 	}
 }

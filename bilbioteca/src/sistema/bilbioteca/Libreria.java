@@ -10,30 +10,49 @@ public class Libreria {
 	private Lista listaClientes;
 	private Lista listaPrestamos;
 	private Lista listaEventos;
-	private int gananciaEnPrestamos;
+	private int gananciaEnPrestamos=0;
 	
 	public Libreria() {
 		listaPrestamos = new Lista();
 	}
 	
-	public void generarPrestamo(String rut, String serie,String fecha) {
-		Cliente cliente = this.listaClientes.buscarPorRut(rut).getCliente();
-		Libro libro = this.listaLibros.buscarPorSerie(serie).getLibro();
-		Prestamo prestamo=new Prestamo(cliente,libro,fecha);
+	public void generarPrestamo(Prestamo prestamo) {
 		this.agregarPrestamo(prestamo);
-		this.bloquearCliente(cliente);
+		//this.bloquearCliente(prestamo.getCliente());
+		this.bloquearLibro(prestamo.getLibro());
 	}
 	
 	public void terminarPrestamo(Prestamo prestamo) {
 		prestamo.getCliente().setAcceso(true);
-		//Agregar ganancia a gananciaenprestamos
-		//Desbloquear libro
+		//this.gananciaEnPrestamos+=;
+		this.desbloquearLibro(prestamo.getLibro());
 	}
 	
 	private void bloquearCliente(Cliente cliente) {
 		Lista aux=this.listaClientes;
 		cliente.setAcceso(false);
 		aux.buscarPorRut(cliente.getRut()).setCliente(cliente);
+		this.listaClientes=aux;
+	}
+	
+	private void bloquearLibro(Libro libro) {
+		Lista aux=this.listaLibros;
+		libro.setEstaPrestado(true);;
+		aux.buscarPorSerie(libro.getNumeroDeserie()).setLibro(libro);;
+		this.listaClientes=aux;
+	}
+	
+	private void desbloquearCliente(Cliente cliente) {
+		Lista aux=this.listaClientes;
+		cliente.setAcceso(false);
+		aux.buscarPorRut(cliente.getRut()).setCliente(cliente);
+		this.listaClientes=aux;
+	}
+	
+	private void desbloquearLibro(Libro libro) {
+		Lista aux=this.listaLibros;
+		libro.setEstaPrestado(false);;
+		aux.buscarPorSerie(libro.getNumeroDeserie()).setLibro(libro);;
 		this.listaClientes=aux;
 	}
 

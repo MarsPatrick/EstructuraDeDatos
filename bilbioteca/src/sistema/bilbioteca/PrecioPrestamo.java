@@ -12,7 +12,7 @@ public class PrecioPrestamo {
 	}
 	
 	public void calcularPrecioTotalDePrestamo() {
-		
+		this.setPrecioPrestamo(prestamo.getLibro().getPrecioPrestamo()+atraso.getPrecioAtraso());
 	}
 
 	
