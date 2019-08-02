@@ -1,0 +1,27 @@
+package main;
+
+import lista.Lista;
+import lista.Nodo;
+import simulador.eventos.SimuladorEventos;
+import sistema.bilbioteca.Libreria;
+import sistema.bilbioteca.Prestamo;
+
+public class main {
+
+	public static void main(String[] args) {
+		SimuladorEventos s= new SimuladorEventos();
+		Libreria l = new Libreria();
+		l.setListaClientes(s.listaClientes);
+		l.setListaLibros(s.listaLibros);
+		Lista eventos = s.listaEventos;
+		
+		Nodo puntero = eventos.getcabeceraEventos();
+		
+		while(puntero!=null) {
+			Prestamo prestamo = puntero.getPrestamo();
+			l.agregarPrestamo(prestamo);
+			puntero = puntero.getEnlace();
+		}
+		l.imprimirPrestamo();
+	}
+}

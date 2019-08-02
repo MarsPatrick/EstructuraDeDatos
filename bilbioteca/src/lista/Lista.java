@@ -9,11 +9,13 @@ public class Lista {
 	private Nodo cabeceraCliente;
 	private Nodo cabeceraLibros;
 	private Nodo cabeceraPrestamos;
+	private Nodo cabeceraEventos;
 	
 	public Lista() {
 		cabeceraCliente=null;
 		cabeceraLibros=null;
 		cabeceraPrestamos=null;
+		cabeceraEventos=null;
 	}
 	
 	public void agregar(Cliente cliente) {
@@ -27,28 +29,21 @@ public class Lista {
 		Nodo nodo=new Nodo(libro);
 		Nodo aux=cabeceraLibros;
 		this.cabeceraLibros=nodo;
-		nodo.setEnlace(aux);
-		
+		nodo.setEnlace(aux);	
 	}
 	
-	public void agregar(Prestamo prestamo) {
+	public void agregarPrestamo(Prestamo prestamo) {
 		Nodo nodo=new Nodo(prestamo);
 		Nodo aux=cabeceraPrestamos;
 		this.cabeceraPrestamos=nodo;
 		nodo.setEnlace(aux);
-		
 	}
 	
-	public Nodo getcabeceraCliente() {
-		return this.cabeceraCliente;
-	}
-	
-	public Nodo getcabeceraLibros() {
-		return this.cabeceraLibros;
-	}
-	
-	public Nodo getcabeceraPrestamos() {
-		return this.cabeceraPrestamos;
+	public void agregarEventos(Prestamo prestamo) {
+		Nodo nodo=new Nodo(prestamo);
+		Nodo aux=cabeceraEventos;
+		this.cabeceraEventos=nodo;
+		nodo.setEnlace(aux);
 	}
 	
 	public Nodo buscarPorRut(String rut) {
@@ -67,4 +62,22 @@ public class Lista {
 		return null;
 	}
 	
+	
+	
+	public Nodo getcabeceraCliente() {
+		return this.cabeceraCliente;
+	}
+	
+	public Nodo getcabeceraLibros() {
+		return this.cabeceraLibros;
+	}
+	
+	public Nodo getcabeceraPrestamos() {
+		return this.cabeceraPrestamos;
+	}
+	
+
+	public Nodo getcabeceraEventos() {
+		return cabeceraEventos;
+	}
 }

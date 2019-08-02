@@ -18,7 +18,7 @@ public class SimuladorEventos {
 	private ArrayList<String> datosSimulacion;
 	public Lista listaClientes;
 	public Lista listaLibros;
-	public Lista listaPrestamos;
+	public Lista listaEventos;
 	
 	public SimuladorEventos() {
 		
@@ -37,7 +37,7 @@ public class SimuladorEventos {
 	
 	private void comenzarSimulacion() {
 		try {
-			listaPrestamos=crearDatosSimulador();
+			listaEventos=crearDatosSimulador();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}	
@@ -47,8 +47,8 @@ public class SimuladorEventos {
 
 	private Lista crearDatosSimulador() throws IOException {
 		BufferedReader br = new BufferedReader(new FileReader(SimuladorEventos.class.getResource(FILE_NAME_SIMULATOR).getPath()));
-		Lista listaPrestamos=new Lista();
-		Lista listaPrestamosFinal=new Lista();
+		Lista listaEventos=new Lista();
+		Lista listaEventosFinal=new Lista();
 		try {
 		    String line = br.readLine();
 
@@ -74,17 +74,17 @@ public class SimuladorEventos {
 				Cliente c=listaClientes.buscarPorRut(sd[1]).getCliente();
 				Libro l=listaLibros.buscarPorSerie(sd[2]).getLibro();
 				Prestamo p = new Prestamo(c,l,sd[3]);
-				listaPrestamos.agregar(p);
+				listaEventos.agregarEventos(p);
 			}
 		    
 		} finally {
 		    br.close();
 		}
 		
-		for(Nodo p=listaPrestamos.getcabeceraPrestamos();p!=null;p=p.getEnlace())
-			listaPrestamosFinal.agregar(p.getPrestamo());
+		for(Nodo p=listaEventos.getcabeceraEventos();p!=null;p=p.getEnlace())
+			listaEventosFinal.agregarEventos(p.getPrestamo());
 		
-		return listaPrestamosFinal;
+		return listaEventosFinal;
 	}
 
 

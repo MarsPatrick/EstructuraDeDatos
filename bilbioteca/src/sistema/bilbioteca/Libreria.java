@@ -9,24 +9,25 @@ public class Libreria {
 	private Lista listaLibros;
 	private Lista listaClientes;
 	private Lista listaPrestamos;
+	private Lista listaEventos;
 	private int gananciaEnPrestamos;
 	
 	public Libreria() {
-		SimuladorEventos s=new SimuladorEventos();
-		this.listaClientes=s.listaClientes;
-		this.listaLibros=s.listaLibros;
-		this.listaPrestamos=new Lista();
+		listaPrestamos = new Lista();
 	}
 	
-	public void generarPrestamo(Cliente cliente, Libro libro,String fecha) {
-			Prestamo prestamo=new Prestamo(cliente,libro,fecha);
-			this.agregarPrestamo(prestamo);
-			this.bloquearCliente(cliente);
+	public void generarPrestamo(String rut, String serie,String fecha) {
+		Cliente cliente = this.listaClientes.buscarPorRut(rut).getCliente();
+		Libro libro = this.listaLibros.buscarPorSerie(serie).getLibro();
+		Prestamo prestamo=new Prestamo(cliente,libro,fecha);
+		this.agregarPrestamo(prestamo);
+		this.bloquearCliente(cliente);
 	}
 	
 	public void terminarPrestamo(Prestamo prestamo) {
 		prestamo.getCliente().setAcceso(true);
-		//seguir haciendo las accione
+		//Agregar ganancia a gananciaenprestamos
+		//Desbloquear libro
 	}
 	
 	private void bloquearCliente(Cliente cliente) {
@@ -54,6 +55,11 @@ public class Libreria {
 			System.out.println(prestamo.getPrestamo().toString());
 	}
 	
+	public void imprimirEventos() {
+		Lista lista = this.listaEventos;
+		for(Nodo prestamo=lista.getcabeceraEventos();prestamo!=null;prestamo=prestamo.getEnlace())
+			System.out.println(prestamo.getPrestamo().toString());
+	}
 	
 	
 	public Lista getListaClientes() {
@@ -82,7 +88,15 @@ public class Libreria {
 	
 	public void agregarPrestamo(Prestamo prestamo) {
 		Lista aux = this.listaPrestamos;
-		aux.agregar(prestamo);
+		aux.agregarPrestamo(prestamo);
 		this.listaPrestamos=aux;
+	}
+
+	public Lista getListaEventos() {
+		return listaEventos;
+	}
+
+	public void setListaEventos(Lista listaEventos) {
+		this.listaEventos = listaEventos;
 	}
 }
