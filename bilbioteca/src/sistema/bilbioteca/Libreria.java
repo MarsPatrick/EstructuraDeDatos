@@ -23,7 +23,8 @@ public class Libreria {
 	}
 	
 	public void terminarPrestamo(Prestamo prestamo) {
-		prestamo.getCliente().setAcceso(true);
+		//Agregar terminar el prestamo
+		//this.desbloquearCliente(prestamo.getCliente());
 		//this.gananciaEnPrestamos+=;
 		this.desbloquearLibro(prestamo.getLibro());
 	}
